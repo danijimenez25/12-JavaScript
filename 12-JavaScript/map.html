@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Functions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="leaflet/leaflet.css" rel="stylesheet">
+  <style>
+      #map{ 
+          width: 100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: -1;
+      }
+      .sidebar{
+          max-width: 30vw;
+      }
+      .sidebar li{
+          cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+
+
+    <!-- map holder -->
+    <div id="map"></div>
+
+
+    <!-- bootstrap dropdown https://getbootstrap.com/docs/5.3/components/dropdowns -->
+    <div class="dropdown-holder d-flex w-75 ms-auto pt-3 pe-3">
+      <div class="dropdown ms-auto">
+        <button class="dropdown-toggle btn btn-secondary" type="button" data-bs-toggle="dropdown">
+          Select a location
+        </button>
+        <ul class="dropdown-menu">
+          <li><a id="hialeah" class="dropdown-item" href="#">Hialeah, FL</a></li>
+          <li><a id="md" class="dropdown-item" href="#">Bethesda, MD</a></li>
+          <li><a id="dc" class="dropdown-item" href="#">Washington, D.C.</a></li>
+          <li><a id="berkeley" class="dropdown-item" href="#">Berkeley, CA</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- jquery and leaflet libraries -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="leaflet/leaflet.js"></script>
+
+
+    <!-- your custom code below-->
+    <script>
+        const map = L.map('map', {scrollWheelZoom: false, dragging: true}).setView([38.416, -97.81], 4);
+
+        //const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'});
+        //tiles.addTo(map);
+       
+    var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    });
+    Esri_WorldImagery.addTo(map);
+        const popup = L.popup();
+
+
+    $("#berkeley").on("click", function(){
+        $("button.dropdown-toggle").text("Berkeley, CA");
+        map.flyTo([37.87,-122.27], 14);
+        popup.setLatLng([37.87,-122.27]);
+        popup.setContent("<h2>Berkeley, CA</h2><p>Present-day, since this past fall, I've been here at Berkeley starting my master's degree in Journalism.</p>");
+        popup.openOn(map);
+    });
+
+    $("#md").on("click", function(){
+        $("button.dropdown-toggle").text("Bethesda, MD");
+        map.flyTo([38.984852,-77.092690], 15);
+        popup.setLatLng([38.984852,-77.092690]);
+        popup.setContent("<h2>Bethesda, MD</h2><p>I lived here for about a year while working with CNBC in their D.C. Bureau.</p>");
+        popup.openOn(map);
+    });
+
+    $("#dc").on("click", function(){
+        $("button.dropdown-toggle").text("Washington, D.C.");
+        map.flyTo([38.907192,-77.036873], 14);
+        popup.setLatLng([38.907192,-77.036873]);
+        popup.setContent("<h2>Washington, D.C.</h2><p>After leaving my hometown, I came to Washington, D.C. for college and where I started working.</p>");
+        popup.openOn(map);
+    });
+
+    $("#hialeah").on("click", function(){
+        $("button.dropdown-toggle").text("Hialeah, FL");
+        map.flyTo([25.827200,-80.281502], 14);
+        popup.setLatLng([25.827200,-80.281502]);
+        popup.setContent("<h2>Hialeah, FL</h2><p>My hometown where my parents immigrated to after 2001. I was born and raised here till I left for college.</p>");
+        popup.openOn(map);
+    });
+
+
+
+
+    </script>
+  </body>
+</html>
