@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        header{
+            background-image:url("images/yellow.jpg");
+            background-size: cover;
+        }
+
+        iframe{
+            min-height: 80vh;
+            width: 100%;
+        }
+
+    </style>
+  </head>
+  <body>
+   
+    <!-- main header with hero image -->
+    <header class="container-fluid text-center vh-100 d-flex flex-column justify-content-center text-white">
+        <h1 class="display-1 fw-bolder">Welcome!</h1>
+        <p>This is my personal website.</p>
+    </header>
+
+    
+    <div class="container my-5 text-center">
+        <!-- Best SEO way to include name of author per Google -->
+        <address rel="author">By Daniella Jiménez</address>
+        <time class="small text-body-secondary" datetime="2025-02">April 2025</time>
+    </div>
+
+
+    <!-- start main text -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <h2>About Me</h2>
+                <p>Jiménez, a Miami native, a journalist and a graduate student from UC Berkeley Graduate School of Journalism. She is an immigration reporter for the Investigative Reporting Program in Berkeley, California. Recently, she was awarded the NICAR25 fellowship by the Investigative Reporters and Editors organization.</p>
+                
+                <h3 class="pb-3">My Story</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10">
+                <figure class="figure d-block mx-auto">
+                    <!-- put iframe here-->
+                    <iframe src="map.html" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+                    <figcaption class="figure-caption text-center">These are cities I've lived thhroughout the years.</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <p>Her work has appeared in USA TODAY,  Mother Jones, Washington Post, CNBC and NBC4/Telemundo44 in Washington D.C. Her 2023 investigation into administrative failings in the State Department’s “diversity visa” program was published by Mother Jones magazine and Center for Public Integrity.</p>
+                <p>At the Washington Post's newsroom, she contributed to an in-depth report into Former President Trump's pardons. Previously, she has graduated from American University’s School of Communication where she studied journalism and international studies with a concentration in economics.</p>
+                <p>While at AU, she was the president of the school’s chapter of the National Association of Hispanic Journalists; a reporting fellow at the Investigative Reporting Workshop, an investigative reporting lab; and received the Ron Sutton Visual Literacy Award and the American News Women's Club Scholarship. The proud daughter of first generation Colombian immigrants, Jiménez was raised in Hialeah, Florida.</p>
+            </div>
+        </div>
+    </div><!-- closed .container -->
+
+
+    <!-- example of a footer -->
+    <footer class="container-fluid bg-dark text-white p-5">
+        <p class="text-center">Website by Daniella Jimenez</p>
+    </footer>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script>
+    //custom code here
+
+    </script>
+  </body>
+</html>
